@@ -1,0 +1,10 @@
+const numero = Number(prompt('Digite um numero'))
+spanNumero = document.getElementById('numero')
+divTexto = document.getElementById('texto')
+spanNumero.innerHTML = "Seu número é " + numero
+divTexto.innerHTML += `<p>Raiz quadrada: ${numero ** (1/2)}</p>`
+divTexto.innerHTML += `<p>Inteiro? ${Number.isInteger(numero) ? "Sim" : "Não"}</p>`
+divTexto.innerHTML += `<p>NaN?: ${Number.isNaN(numero) ? "Sim" : "Não"}</p>`
+divTexto.innerHTML += `<p>Arredondado para baixo fica: ${Math.floor(numero)}</p>`
+divTexto.innerHTML += `<p>Arredondado para cima fica: ${Math.ceil(numero)}</p>`
+divTexto.innerHTML += `<p>Com duas casas decimais fica: ${numero.toFixed(2)}</p>`
