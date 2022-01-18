@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modelo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="container">
+        <form id="form" action="">
+            <h1>Formulário de cadastro</h1>
+            <ul>
+                <li>Nenhum campo pode estar vazio</li>
+                <li>Usuário só podera conter letras e/ou números</li>
+                <li>Senha precisa ser entre 6 e 12 aracteres</li>
+            </ul>
+            <label for="nome">Nome:</label>
+            <input id="nome" class="validar" type="text">
+            <label for="sobrenome">Sobrenome:</label>
+            <input id="sobrenome" class="validar" type="text">
+            <label for="cpf">CPF:</label>
+            <input id="cpf" class="validar" type="text">
+            <label for="usuario">Usuário:</label>
+            <input id="usuario" class="validar" type="text">
+            <label for="senha">Senha:</label>
+            <input id="senha" class="validar" type="password">
+            <label for="confirmaSenha">Confirmar Senha:</label>
+            <input id="confirmaSenha" class="validar" type="password">
+            <button id="enviar">Enviar</button>
+        </form>    
+    </section>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
