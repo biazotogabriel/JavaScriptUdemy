@@ -1,0 +1,26 @@
+2     . 1     . 0
+major . minor . patch
+
+patch = correção de bugs
+minor = novas melhorias que não tenham quebra de compatibilidade
+major = novas melhorias que trazem quebra de compatibilidade
+
+^ antes da versão atualiza a minor e a path
+~ antes da versão atualiza apenas a path
+
+npm init -y //inicia o npm na pasta
+
+npm instal [nome] instala a dependencia
+[nome]@M.m.p instala versão especifica
+[nome]@4.x isntala a ultima versão dentro da major 4
+--save-dev instala como dependencia de desenvolvedor
+--save-prod instala como dependencia de produção (padão)
+-E mantem em uma versão específica
+
+npm update // atualiza as dependencias
+
+npm outdated // mostra dependencias desatualizadas de acordo com ^ ou ~
+
+npm ls // lista as dependencias
+--depth=0 // lista as dependencias que eu instalei
+--depth=1 // lista as dependencias descendo 1 nivel da que eu instalei
