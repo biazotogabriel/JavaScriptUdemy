@@ -23,4 +23,3 @@ console.log(umaString.slice(-5, -1)) // oma
 console.log(umaString.split("r")) // divide a string sempre que tiver um r
 console.log(umaString.split(" ", 2)) // divide a string no " " duas vezes
 console.log(umaString.toUpperCase()) // TUDO MAIUSCULO
-

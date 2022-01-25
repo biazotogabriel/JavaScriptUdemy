@@ -25,7 +25,6 @@ class Smartphone extends Dispositivo { //extends define que a classe será uma e
         this.cor = cor
         this.modelo = modelo
     }
-
 }
 
 const s1 = new Smartphone('iPhone', 'Branco', 'MiA3')

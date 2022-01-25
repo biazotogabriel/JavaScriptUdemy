@@ -1,4 +1,5 @@
 // filter -> sempre retornará um array com a mesma quantidade de elementos ou menos
+// ele não altera o array original onde a função está sendo utilizada
 // retorne os números maiores que 10
 const numeros = [5, 59, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27]
 const filtrados = numeros.filter((valor, indice, array) => {
@@ -20,3 +21,4 @@ const nomesM5L = pessoas.filter(objeto => objeto.nome.length > 5)
 const pessoasM50 = pessoas.filter(objeto => objeto.idade > 50)
 console.log(nomesM5L)
 console.log(pessoasM50)
+console.log(pessoas)

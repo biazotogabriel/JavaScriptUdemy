@@ -10,7 +10,7 @@ class Pessoa {
 
 exports.Pessoa = Pessoa
 
-//exports = { isso não funcionará trocaria a referencia de exports de module.exports
+//exports = { isso não funcionará pq trocaria a referencia de exports de module.exports
 //} para isso é preciso apontar module
 // module.exports = { ... }
 
