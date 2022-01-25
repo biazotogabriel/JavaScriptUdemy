@@ -1,0 +1,22 @@
+<%- include('./includes/head.ejs') %>
+  <section class="container">
+    <h1>
+      <%= titulo %><br> <!-- este modelo escapa os caracrteres escrevendo tudo na integra -->
+      <%- titulo %><br> <!-- este modelo não escapa os caracrteres -->
+      <%- umaVariavelLocal %><br> <!-- este modelo não escapa os caracrteres -->
+      <% if(typeof titulo !=='undefined' ){ %>
+      <%= "titulo enviado" %>
+      <% } %>
+    </h1>
+    <p>
+      <% numeros.forEach(num=> { %>
+        <%=num%><br>
+          <% }) %>
+    </p>
+    <form action="/" method="post">
+      <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+      Cliente: <input type="text" name="cliente">
+      <button>Enviar</button>
+    </form>
+  </section>
+  <%- include('./includes/foot.ejs') %>
