@@ -1,13 +1,10 @@
-const HomeModel = require('../models/HomeModel')
+const Contato = require('../models/ContatoModel')
 
-exports.paginaInicial = (req, res, next) => {
-    res.render('index', {
-        titulo: 'Este será o título da página',
-        numeros: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    })
-    next()
-}
-
-exports.trataPost = (req, res, next) => {
-    res.send(req.body)
+exports.index = async (req, res) => {
+    console.log(req.session.user)
+    if (req.session.user) {
+        const contatos = await Contato.buscaContatos(req.session.user._id)    
+        return res.render('index', { contatos })
+    }
+    res.render('index', { contatos: null }) 
 }
