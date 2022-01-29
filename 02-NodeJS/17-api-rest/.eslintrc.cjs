@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    //  browser: true,
+    //    browser: true,
     es2021: true,
     node: true,
   },
@@ -19,5 +19,6 @@ module.exports = {
     'import/first': 'off',
     'no-unused-vars': 'off',
     'no-param-reassign': 'off',
+    camelcase: 'off',
   },
-};
+}
