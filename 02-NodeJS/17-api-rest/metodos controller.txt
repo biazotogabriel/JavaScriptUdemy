@@ -1,0 +1,5 @@
+index - lista todos os usuários - get
+store/create - cria um usuário - post
+delete - apaga um usuario - delete
+show - mostra um usuario - get
+update - atualiza um usuario - patch ou put
