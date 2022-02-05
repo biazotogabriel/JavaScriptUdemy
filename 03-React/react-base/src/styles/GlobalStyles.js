@@ -1,5 +1,11 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { primaryColor, primaryDarkColor } from '../config/colors'
+import {
+  primaryColor,
+  primaryDarkColor,
+  errorColor,
+  succesColor,
+} from '../config/colors'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default createGlobalStyle`
 
@@ -38,6 +44,29 @@ a {
 ul {
   list-style: none;
 }
+
+body .Toastify .Toastify__toast-container .Toastify__toast--success {
+  background: ${succesColor};
+  color: white;
+}
+
+body .Toastify .Toastify__toast-container .Toastify__toast--error {
+  background: ${errorColor};
+  color: white;
+}
+
+body .Toastify .Toastify__toast-container .Toastify__progress-bar {
+  background: white;
+}
+
+:root {
+  --toastify-icon-color-info: white;
+  --toastify-icon-color-success: white;
+  --toastify-icon-color-warning: white;
+  --toastify-icon-color-error: white;
+}
+
+
 `
 
 export const Container = styled.main`
