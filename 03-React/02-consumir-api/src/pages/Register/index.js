@@ -7,11 +7,13 @@ import axios from '../../services/axios'
 
 import { Form } from './styled'
 import { Container } from '../../styles/GlobalStyles'
+import Loading from '../../components/Loading'
 
 export default function Register() {
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
   async function handleSubmit(e) {
     e.preventDefault()
@@ -23,6 +25,7 @@ export default function Register() {
     if (!isEmail(email)) formErrors.push('Email inválido')
     formErrors.forEach((element) => toast.error(element))
     if (formErrors.length > 0) return
+    setIsLoading(true)
     try {
       await axios.post('/users/create', {
         nome,
@@ -31,6 +34,7 @@ export default function Register() {
       })
       toast.dismiss()
       toast.success('Cadastro realizado com sucesso')
+      setIsLoading(false)
       navigate('/login')
     } catch (error) {
       const errors = get(error, 'response.data.errors', [])
@@ -40,6 +44,7 @@ export default function Register() {
 
   return (
     <Container>
+      <Loading isLoading={isLoading} />
       <h1>Crie sua conta</h1>
       {/* eslint-disable-next-line react/jsx-no-bind */}
       <Form onSubmit={handleSubmit}>

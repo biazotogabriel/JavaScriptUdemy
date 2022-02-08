@@ -1,11 +1,13 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
 
 export default function Private({ component: Component }) {
-  const isLoggedIn = false
+  const location = useLocation()
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
   if (!isLoggedIn) {
-    return <Navigate to="/login" /> // state={rest.location.pathname}
+    return <Navigate to="/login" state={{ previous: location.pathname }} />
   }
   return <Component />
 }
