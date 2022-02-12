@@ -12,14 +12,10 @@ import Page404 from '../pages/Page404'
 export default function Rotas() {
   return (
     <Routes>
-      <Route exact path="/" element={<Alunos />} />
-      <Route
-        exact
-        path="/aluno/:id/edit"
-        element={<Private component={Aluno} />}
-      />
-      <Route exact path="/aluno/" element={<Private component={Aluno} />} />
-      <Route exact path="/foto/:id" element={<Private component={Fotos} />} />
+      <Route path="/" element={<Alunos />} />
+      <Route path="/aluno/:id/edit" element={<Private component={Aluno} />} />
+      <Route path="/aluno/" element={<Private component={Aluno} />} />
+      <Route path="/foto/:id" element={<Private component={Fotos} />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<Page404 />} />

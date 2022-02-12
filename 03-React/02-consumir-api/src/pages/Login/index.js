@@ -15,8 +15,13 @@ Number.prototype.between = function between(min = 0, max = 0) {
 }
 
 export default function Login() {
-  const location = useLocation()
   const navigate = useNavigate()
+  function redirect(path) {
+    return () => {
+      navigate(path)
+    }
+  }
+  const location = useLocation()
   const dispacth = useDispatch()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -24,14 +29,21 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     const formErrors = []
     if (!password.length.between(6, 50))
       formErrors.push('Senha deve ter entre 6 e 50 caracteres')
     if (!isEmail(email)) formErrors.push('Email inválido')
     formErrors.forEach((element) => toast.error(element))
     if (formErrors.length) return
-    const redirect = location.state?.previous || '/'
-    dispacth(actions.loginRequest({ email, password, navigate, redirect }))
+    const successPath = location.state?.previous || '/'
+    dispacth(
+      actions.loginRequest({
+        email,
+        password,
+        redirect: redirect(successPath),
+      })
+    )
   }
 
   return (

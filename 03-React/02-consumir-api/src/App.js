@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BrowserRouter } from 'react-router-dom' // Router
+import { BrowserRouter } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'

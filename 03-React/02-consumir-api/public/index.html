@@ -9,5 +9,12 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+    // comando para remover o error overlay inserido automaticamente pelo react
+    setInterval(() => {
+      const iframeError = document.querySelector('iframe')
+      if (iframeError) iframeError.style = 'display: none;'
+    }, 500)
+    </script>
   </body>
 </html>
